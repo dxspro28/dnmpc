@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Net;
 using System.Threading;
 using System.Net.Sockets;
@@ -43,35 +44,35 @@ namespace dnmpc {
         }
 
 		public string GetCurrentSong() {
-			return Send("get_current_song");
+			return File.ReadAllText("/tmp/dnmps_current_song").Trim();
 		}
 
 		public void Play() {
-			Send("play");
+			File.WriteAllText("/tmp/dnmps_file_com/dnmpc", "play");
 		}
 
 		public void Pause() {
-			Send("pause");
+			File.WriteAllText("/tmp/dnmps_file_com/dnmpc", "pause");
 		}
 
 		public void Resume() {
-			Send("resume");
+			File.WriteAllText("/tmp/dnmps_file_com/dnmpc", "resume");
 		}
 
 		public void Next() {
-			Send("next");
+			File.WriteAllText("/tmp/dnmps_file_com/dnmpc", "next");
 		}
 
 		public void Prev() {
-			Send("prev");
+			File.WriteAllText("/tmp/dnmps_file_com/dnmpc", "prev");
 		}
 
 		public void VolumeUp() {
-			Send("volume_up");
+			File.WriteAllText("/tmp/dnmps_file_com/dnmpc", "volume_up");
 		}
 
 		public void VolumeDown() {
-			Send("volume_down");
+			File.WriteAllText("/tmp/dnmps_file_com/dnmpc", "volume_down");
 		}
 
 		public float GetVolume() {
@@ -83,13 +84,13 @@ namespace dnmpc {
 		}
 
 		public void Forward(bool long_forward = false) {
-			if(long_forward) Send("long_forward");
-			else Send("forward");
+			if(long_forward) File.WriteAllText("/tmp/dnmps_file_com/dnmpc", "long_forward");
+			else File.WriteAllText("/tmp/dnmps_file_com/dnmpc", "forward");
 		}
 
 		public void Backward(bool long_backward = false) {
-			if(long_backward) Send("long_backward");
-			else Send("backward");
+			if(long_backward) File.WriteAllText("/tmp/dnmps_file_com/dnmpc", "long_backward");
+			else File.WriteAllText("/tmp/dnmps_file_com/dnmpc", "backward");
 		}
 
 		public double GetPosition() {
@@ -125,7 +126,7 @@ namespace dnmpc {
 		}
 
 		public string GetPlayerState() {
-			return Send("get_player_state").Replace("\0", "");
+			return File.ReadAllText("/tmp/dnmps_state").Trim();
 		}
 
 		public bool IsPaused() {

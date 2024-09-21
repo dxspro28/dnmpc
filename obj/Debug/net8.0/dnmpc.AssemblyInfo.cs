@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("dnmpc")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5facd8953f91a3a28205ca0bca2315dd81d221e7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+407cd1c5f5391470814b0c66831b0192cb138bca")]
 [assembly: System.Reflection.AssemblyProductAttribute("dnmpc")]
 [assembly: System.Reflection.AssemblyTitleAttribute("dnmpc")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
